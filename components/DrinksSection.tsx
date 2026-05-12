@@ -106,7 +106,7 @@ export default function DrinksSection() {
                 whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
                 onClick={() => setSelectedDrink(drink)}
-                className="group relative cursor-pointer bg-white rounded-3xl overflow-hidden border border-burgundy-100/30 hover:shadow-lg hover:shadow-burgundy-900/8 transition-shadow duration-400"
+                className="group relative cursor-pointer bg-white rounded-3xl overflow-hidden border border-burgundy-100/30 hover:shadow-lg hover:shadow-burgundy-900/8 transition-shadow duration-400 flex flex-col h-48 md:h-52"
               >
                 {/* Drink image */}
                 <div className="relative h-32">
@@ -123,8 +123,8 @@ export default function DrinksSection() {
                 <div className="absolute top-2 right-2 w-8 h-8 bg-gold-accent/10 rounded-full blur-sm"></div>
                 <div className="absolute bottom-2 left-2 w-6 h-6 bg-rose-soft/15 rounded-full"></div>
 
-                <div className="relative z-10 p-4 text-center">
-                  <h3 className="font-display text-lg font-semibold text-chocolate-800 group-hover:text-burgundy-700 transition-colors mb-1">
+                <div className="relative z-10 p-4 text-center flex-grow flex flex-col justify-center">
+                  <h3 className="font-display text-xs sm:text-base font-semibold text-chocolate-800 group-hover:text-burgundy-700 transition-colors mb-1 line-clamp-1">
                     {drink.name}
                   </h3>
                   <p className="font-display text-burgundy-600 font-semibold">

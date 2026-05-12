@@ -67,7 +67,7 @@ export default function PastriesSection() {
         </Reveal>
 
         {/* Horizontal scrolling cards on mobile, grid on desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {pastries.map((item, i) => (
             <Reveal
               key={item.name}
@@ -77,7 +77,7 @@ export default function PastriesSection() {
               <motion.div
                 whileHover={{ y: -4 }}
                 onClick={() => setSelectedPastry(item)}
-                className="group cursor-pointer bg-white/80 backdrop-blur-sm rounded-2xl p-5 border border-burgundy-100/30 hover:bg-white hover:shadow-lg hover:shadow-burgundy-900/5 transition-all duration-400"
+                className="group cursor-pointer bg-white/80 backdrop-blur-sm rounded-2xl p-5 border border-burgundy-100/30 hover:bg-white hover:shadow-lg hover:shadow-burgundy-900/5 transition-all duration-400 flex flex-col h-48 md:h-52"
               >
                 {/* Product image */}
                 <div className="flex justify-center mb-3">
@@ -92,16 +92,16 @@ export default function PastriesSection() {
                 </div>
 
                 {/* Info */}
-                <div className="text-center">
+                <div className="text-center flex flex-col flex-grow">
                   <div className="flex items-center justify-between gap-2 mb-1">
-                    <h3 className="font-display text-lg font-semibold text-chocolate-800 group-hover:text-burgundy-700 transition-colors flex-1">
+                    <h3 className="font-display text-xs sm:text-base font-semibold text-chocolate-800 group-hover:text-burgundy-700 transition-colors flex-1 line-clamp-1">
                       {item.name}
                     </h3>
                     <span className="font-display text-burgundy-600 font-semibold text-sm whitespace-nowrap">
                       {item.price}
                     </span>
                   </div>
-                  <p className="font-body text-sm text-chocolate-800/50 leading-relaxed">
+                  <p className="font-body text-sm text-chocolate-800/50 leading-relaxed line-clamp-2 flex-grow">
                     {item.description}
                   </p>
                 </div>

@@ -39,7 +39,7 @@ export default function Reveal({
   once = true,
 }: RevealProps) {
   const [ref, inView] = useInView({
-    threshold: 0.05,
+    threshold: 0,
     triggerOnce: once,
   });
 
@@ -50,7 +50,7 @@ export default function Reveal({
       animate={inView ? "visible" : "hidden"}
       variants={variants[direction]}
       transition={{
-        duration: 0.4,
+        duration: 0.2,
         delay,
         ease: [0.16, 1, 0.3, 1],
       }}

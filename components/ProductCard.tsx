@@ -71,14 +71,14 @@ export default function ProductCard({
       </div>
 
       {/* Content */}
-      <div className="p-5">
-        <h3 className="font-display text-xl font-semibold text-chocolate-800 mb-1.5 group-hover:text-burgundy-700 transition-colors">
+      <div className="p-5 flex flex-col h-40 md:h-44">
+        <h3 className="font-display text-sm md:text-lg font-semibold text-chocolate-800 mb-1.5 group-hover:text-burgundy-700 transition-colors line-clamp-2">
           {name}
         </h3>
-        <p className="font-body text-sm text-chocolate-800/60 leading-relaxed mb-4 line-clamp-2">
+        <p className="font-body text-sm text-chocolate-800/60 leading-relaxed mb-4 line-clamp-2 flex-grow">
           {description}
         </p>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between mt-auto">
           <span className="font-display text-lg font-semibold text-burgundy-700">
             {price}
           </span>

@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-[84vh] pt-24 sm:pt-28 flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen pt-24 sm:pt-28 pb-16 sm:pb-20 flex items-center justify-center overflow-visible"
       style={{
         background:
           "linear-gradient(165deg, #4A1228 0%, #7B2040 35%, #9B2D47 65%, #B8405B 100%)",
@@ -93,7 +93,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto w-full pb-8 sm:pb-12">
         {/* Tagline */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -200,20 +200,20 @@ export default function Hero() {
 
         {/* Quick info pills */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
-          className="mt-14 flex flex-wrap items-center justify-center gap-3 text-sm"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.3 }}
+          className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm px-4"
         >
           {[
             "Eggless Options",
             "Wedding Cakes",
             "Custom Orders",
             "Fresh Daily",
-          ].map((tag, i) => (
+          ].map((tag) => (
             <span
               key={tag}
-              className="px-4 py-1.5 bg-white/10 text-cream-200 rounded-full font-body font-light border border-white/10"
+              className="px-3 sm:px-4 py-1 sm:py-1.5 bg-white/10 text-cream-200 rounded-full font-body font-light border border-white/10 whitespace-nowrap"
             >
               {tag}
             </span>
@@ -232,7 +232,7 @@ export default function Hero() {
           }
         }
       `}</style>
-      <div className="absolute bottom-0 left-0 right-0">
+      <div className="absolute bottom-0 left-0 right-0 mt-auto pointer-events-none">
         <svg
           viewBox="0 0 1440 120"
           fill="none"
