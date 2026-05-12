@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --burgundy: #7B2040;
+  --burgundy-deep: #4A1228;
+  --cream: #FFFAF5;
+  --cream-warm: #FFF5EB;
+  --chocolate: #2D1810;
+  --rose-soft: #D4918B;
+  --gold-accent: #C9A96E;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--cream);
+  color: var(--chocolate);
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--burgundy);
+  color: var(--cream);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--burgundy);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--burgundy-deep);
+}
+
+/* Decorative background grain texture overlay */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Blob shape for decorative elements */
+.blob-shape {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+/* Wavy section dividers */
+.wave-divider {
+  position: relative;
+}
+
+.wave-divider::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: var(--cream);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+/* Decorative dots pattern */
+.dots-pattern {
+  background-image: radial-gradient(circle, var(--burgundy) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.06;
+}
+
+/* Curved section tops */
+.curve-top {
+  clip-path: ellipse(75% 100% at 50% 100%);
+}
+
+/* Handwritten underline effect */
+.hand-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.hand-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: -5%;
+  width: 110%;
+  height: 8px;
+  background: var(--rose-soft);
+  border-radius: 40% 60% 50% 50%;
+  opacity: 0.5;
+  transform: rotate(-1deg);
+}
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px -12px rgba(75, 18, 40, 0.15);
+}
+
+/* Staggered fade-in animations via CSS */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hero curved bottom */
+.hero-curve {
+  position: relative;
+}
+
+.hero-curve::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: -5%;
+  width: 110%;
+  height: 100px;
+  background: var(--cream);
+  border-radius: 50% 50% 0 0;
+}
+
+/* Frosted glass effect */
+.frosted {
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+}
+
+/* Section link active indicator for nav */
+.nav-indicator {
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
