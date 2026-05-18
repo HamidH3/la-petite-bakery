@@ -250,11 +250,11 @@ export default function CakesSection() {
         {/* Custom order CTA */}
         <Reveal delay={0.3}>
           <div className="mt-16 text-center">
-            <div className="inline-flex items-center gap-3 px-8 py-4 bg-burgundy-50 rounded-2xl border border-burgundy-100">
-              <div className="w-8 h-8 bg-gradient-to-br from-gold-accent/20 to-burgundy-100/30 rounded-full flex items-center justify-center">
+            <div className="flex flex-col items-center gap-4 px-6 py-5 bg-burgundy-50 rounded-2xl border border-burgundy-100 md:inline-flex md:flex-row md:items-center md:gap-3 md:px-8 md:py-4">
+              <div className="hidden md:flex w-8 h-8 bg-gradient-to-br from-gold-accent/20 to-burgundy-100/30 rounded-full items-center justify-center">
                 <div className="w-4 h-4 bg-gold-accent/40 rounded-full"></div>
               </div>
-              <div className="text-left">
+              <div className="text-center md:text-left">
                 <p className="font-display text-burgundy-800 font-semibold">
                   Need a custom cake?
                 </p>
@@ -264,7 +264,7 @@ export default function CakesSection() {
               </div>
               <a
                 href="tel:02088638088"
-                className="ml-4 px-5 py-2 bg-burgundy-700 text-cream-50 font-body font-semibold text-sm rounded-full hover:bg-burgundy-800 transition-colors whitespace-nowrap"
+                className="px-6 py-2.5 bg-burgundy-700 text-cream-50 font-body font-semibold text-sm rounded-full hover:bg-burgundy-800 transition-colors whitespace-nowrap md:ml-4"
               >
                 020 8863 8088
               </a>

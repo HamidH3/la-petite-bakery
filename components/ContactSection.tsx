@@ -42,7 +42,7 @@ export default function ContactSection() {
 
       <div className="relative max-w-6xl mx-auto px-6 pt-8">
         <Reveal>
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 lg:mb-16">
             <p className="font-accent text-burgundy-400 text-sm tracking-[0.25em] uppercase mb-3">
               Get In Touch
             </p>
@@ -58,16 +58,16 @@ export default function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Info cards */}
           <Reveal direction="left" className="lg:col-span-2">
-            <div className="space-y-5">
+            <div className="grid grid-cols-2 gap-3 lg:grid-cols-1 lg:gap-4">
               {/* Address */}
-              <div className="bg-white rounded-2xl p-6 border border-burgundy-100/30 shadow-sm">
-                <div className="flex items-start gap-4">
-                  <span className="text-2xl">📍</span>
+              <div className="bg-white rounded-2xl p-3 lg:p-6 border border-burgundy-100/30 shadow-sm">
+                <div className="flex items-start gap-2 lg:gap-4">
+                  <span className="text-xl lg:text-2xl">📍</span>
                   <div>
-                    <h3 className="font-display text-lg font-semibold text-chocolate-800 mb-1">
+                    <h3 className="font-display text-sm lg:text-lg font-semibold text-chocolate-800 mb-0.5 lg:mb-1">
                       Find Us
                     </h3>
-                    <p className="font-body text-chocolate-800/60">
+                    <p className="font-body text-xs lg:text-base text-chocolate-800/60">
                       5 Station Road
                       <br />
                       Harrow HA1 2TW
@@ -77,14 +77,14 @@ export default function ContactSection() {
               </div>
 
               {/* Hours */}
-              <div className="bg-white rounded-2xl p-6 border border-burgundy-100/30 shadow-sm">
-                <div className="flex items-start gap-4">
-                  <span className="text-2xl">🕐</span>
+              <div className="bg-white rounded-2xl p-3 lg:p-6 border border-burgundy-100/30 shadow-sm">
+                <div className="flex items-start gap-2 lg:gap-4">
+                  <span className="text-xl lg:text-2xl">🕐</span>
                   <div>
-                    <h3 className="font-display text-lg font-semibold text-chocolate-800 mb-1">
+                    <h3 className="font-display text-sm lg:text-lg font-semibold text-chocolate-800 mb-0.5 lg:mb-1">
                       Opening Hours
                     </h3>
-                    <p className="font-body text-chocolate-800/60">
+                    <p className="font-body text-xs lg:text-base text-chocolate-800/60">
                       Every day: 7:00 AM – 10:30 PM
                     </p>
                   </div>
@@ -92,16 +92,16 @@ export default function ContactSection() {
               </div>
 
               {/* Phone */}
-              <div className="bg-white rounded-2xl p-6 border border-burgundy-100/30 shadow-sm">
-                <div className="flex items-start gap-4">
-                  <span className="text-2xl">📞</span>
+              <div className="bg-white rounded-2xl p-3 lg:p-6 border border-burgundy-100/30 shadow-sm">
+                <div className="flex items-start gap-2 lg:gap-4">
+                  <span className="text-xl lg:text-2xl">📞</span>
                   <div>
-                    <h3 className="font-display text-lg font-semibold text-chocolate-800 mb-1">
+                    <h3 className="font-display text-sm lg:text-lg font-semibold text-chocolate-800 mb-0.5 lg:mb-1">
                       Call Us
                     </h3>
                     <a
                       href="tel:02088638088"
-                      className="font-body text-burgundy-600 hover:text-burgundy-800 transition-colors font-medium"
+                      className="font-body text-xs lg:text-base text-burgundy-600 hover:text-burgundy-800 transition-colors font-medium"
                     >
                       020 8863 8088
                     </a>
@@ -110,18 +110,18 @@ export default function ContactSection() {
               </div>
 
               {/* Socials */}
-              <div className="bg-white rounded-2xl p-6 border border-burgundy-100/30 shadow-sm">
-                <div className="flex items-start gap-4">
-                  <span className="text-2xl">📱</span>
+              <div className="bg-white rounded-2xl p-3 lg:p-6 border border-burgundy-100/30 shadow-sm">
+                <div className="flex items-start gap-2 lg:gap-4">
+                  <span className="text-xl lg:text-2xl">📱</span>
                   <div>
-                    <h3 className="font-display text-lg font-semibold text-chocolate-800 mb-1">
+                    <h3 className="font-display text-sm lg:text-lg font-semibold text-chocolate-800 mb-0.5 lg:mb-1">
                       Follow Us
                     </h3>
                     <a
                       href="https://www.instagram.com/lapetitebakeryldn/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-body text-burgundy-600 hover:text-burgundy-800 transition-colors font-medium"
+                      className="font-body text-xs lg:text-base text-burgundy-600 hover:text-burgundy-800 transition-colors font-medium"
                     >
                       @lapetitebakeryldn
                     </a>
