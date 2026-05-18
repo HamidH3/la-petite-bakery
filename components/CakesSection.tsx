@@ -229,7 +229,7 @@ export default function CakesSection() {
                     </div>
                   )}
 
-                  <Reveal delay={i * 0.08}>
+                  <Reveal delay={i * 0.025}>
                     <ProductCard
                       {...cake}
                       onClick={() => setSelectedCake(cake)}

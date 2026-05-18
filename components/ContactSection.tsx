@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Reveal from './Reveal';
 
@@ -12,14 +12,38 @@ export default function ContactSection() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    // In production, replace with your API route or form service (e.g. Formspree, EmailJS)
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-    setFormData({ name: '', email: '', phone: '', message: '' });
+  const handleSubmit = async () => {
+    if (!formData.name || !formData.email || !formData.message) return;
+    setSending(true);
+    setError(false);
+    try {
+      const res = await fetch(
+        `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_ID}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone || undefined,
+            message: formData.message,
+          }),
+        }
+      );
+      if (res.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -221,12 +245,19 @@ export default function ContactSection() {
                     />
                   </div>
 
+                  {error && (
+                    <p className="font-body text-sm text-red-600 text-center">
+                      Something went wrong — please try again or call us directly.
+                    </p>
+                  )}
+
                   <button
                     type="button"
                     onClick={handleSubmit}
-                    className="w-full py-3.5 bg-burgundy-700 text-cream-50 font-body font-semibold rounded-xl hover:bg-burgundy-800 active:scale-[0.98] transition-all duration-200 shadow-md shadow-burgundy-700/20"
+                    disabled={sending}
+                    className="w-full py-3.5 bg-burgundy-700 text-cream-50 font-body font-semibold rounded-xl hover:bg-burgundy-800 active:scale-[0.98] transition-all duration-200 shadow-md shadow-burgundy-700/20 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Send Message
+                    {sending ? 'Sending…' : 'Send Message'}
                   </button>
                 </div>
               )}

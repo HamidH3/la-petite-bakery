@@ -71,13 +71,13 @@ export default function PastriesSection() {
           {pastries.map((item, i) => (
             <Reveal
               key={item.name}
-              delay={i * 0.08}
+              delay={i * 0.025}
               direction={i % 2 === 0 ? "left" : "right"}
             >
               <motion.div
                 whileHover={{ y: -4 }}
                 onClick={() => setSelectedPastry(item)}
-                className="group cursor-pointer bg-white/80 backdrop-blur-sm rounded-2xl p-5 border border-burgundy-100/30 hover:bg-white hover:shadow-lg hover:shadow-burgundy-900/5 transition-all duration-400 flex flex-col h-40 md:h-52"
+                className="group cursor-pointer bg-white/80 backdrop-blur-sm rounded-2xl p-5 border border-burgundy-100/30 hover:bg-white hover:shadow-lg hover:shadow-burgundy-900/5 transition-all duration-400 flex flex-col h-52 overflow-hidden"
               >
                 {/* Product image */}
                 <div className="flex justify-center mb-3">
@@ -101,7 +101,7 @@ export default function PastriesSection() {
                       {item.price}
                     </span>
                   </div>
-                  <p className="hidden md:block font-body text-sm text-chocolate-800/50 leading-relaxed line-clamp-2 flex-grow">
+                  <p className="font-body text-[11px] text-chocolate-800/50 leading-relaxed line-clamp-2">
                     {item.description}
                   </p>
                 </div>

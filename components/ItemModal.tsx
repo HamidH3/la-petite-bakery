@@ -19,18 +19,11 @@ interface ItemModalProps {
 export default function ItemModal({ item, open, onClose }: ItemModalProps) {
   useEffect(() => {
     if (!open) return;
-    const scrollY = window.scrollY;
-    const body = document.body;
-    body.style.overflow = "hidden";
-    body.style.position = "fixed";
-    body.style.top = `-${scrollY}px`;
-    body.style.width = "100%";
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
     return () => {
-      body.style.overflow = "";
-      body.style.position = "";
-      body.style.top = "";
-      body.style.width = "";
-      window.scrollTo(0, scrollY);
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
     };
   }, [open]);
 

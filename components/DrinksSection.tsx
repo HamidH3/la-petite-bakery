@@ -101,7 +101,7 @@ export default function DrinksSection() {
         {/* Drinks in a cozy visual grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto">
           {drinks.map((drink, i) => (
-            <Reveal key={drink.name} delay={i * 0.08} direction="scale">
+            <Reveal key={drink.name} delay={i * 0.025} direction="scale">
               <motion.div
                 whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ duration: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
